@@ -125,6 +125,82 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get all purchases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/platzi-market/api/purchases/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"platzi-market",
+						"api",
+						"purchases",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get purchases by client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/platzi-market/api/purchases/client/4546221",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"platzi-market",
+						"api",
+						"purchases",
+						"client",
+						"4546221"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save purchase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"clientId\": \"4546221\",\n        \"date\": \"2000-12-31T13:40:00\",\n        \"paymentMethod\": \"E\",\n        \"comment\": \"\",\n        \"state\": \"P\",\n        \"items\": [\n            {\n                \"productId\": 1,\n                \"quantity\": 10,\n                \"total\": 3000.0,\n                \"active\": true\n            },\n            {\n                \"productId\": 3,\n                \"quantity\": 20,\n                \"total\": 14000.0,\n                \"active\": true\n            }\n        ]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/platzi-market/api/purchases/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"platzi-market",
+						"api",
+						"purchases",
+						"save"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
