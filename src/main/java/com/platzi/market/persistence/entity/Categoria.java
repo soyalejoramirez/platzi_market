@@ -22,10 +22,6 @@ public class Categoria {
         return idCategoria;
     }
 
-    public void setIdCategoria(Integer idCategoria) {
-        this.idCategoria = idCategoria;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
