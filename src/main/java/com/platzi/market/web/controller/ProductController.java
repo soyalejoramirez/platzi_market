@@ -22,14 +22,14 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/all")
-    @ApiOperation(value = "Get all supermarket products")
+    @ApiOperation(value = "Get all supermarket products", authorizations = { @Authorization(value="JWT") })
     @ApiResponse(code = 200, message = "OK")
     public ResponseEntity<List<Product>> getAll() {
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    @ApiOperation("Search a product with an ID")
+    @ApiOperation(value = "Search a product with an ID", authorizations = { @Authorization(value="JWT") })
     @ApiResponses({
             @ApiResponse(code = 200, message = "OK"),
             @ApiResponse(code = 404, message = "Product not found"),
