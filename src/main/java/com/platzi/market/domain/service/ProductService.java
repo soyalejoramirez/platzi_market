@@ -3,6 +3,7 @@ package com.platzi.market.domain.service;
 import com.platzi.market.domain.Product;
 import com.platzi.market.domain.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,9 +31,11 @@ public class ProductService {
     }
 
     public boolean delete(int productId) {
-        return getProduct(productId).map(product -> {
+        try {
             productRepository.delete(productId);
             return true;
-        }).orElse(false);
+        } catch (EmptyResultDataAccessException e) {
+            return false;
+        }
     }
 }
